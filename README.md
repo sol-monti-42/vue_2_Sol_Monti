@@ -4,13 +4,13 @@ Aplicación web desarrollada con **Vue.js 3** y **Vite** que consume datos en ti
 
 ---
 
-## 👥 Integrantes
+## Integrantes
 
 - **Alumna:** Sol Monti
 
 ---
 
-## 🎯 Tema y API Elegidos
+## Tema y API Elegidos
 
 - **Tema:** Pokédex / Mundo Pokémon.
 - **API Pública:** [PokéAPI v2](https://pokeapi.co/) (`https://pokeapi.co/api/v2/`).
@@ -23,7 +23,7 @@ Aplicación web desarrollada con **Vue.js 3** y **Vite** que consume datos en ti
 
 ---
 
-## 🚀 Instrucciones para Instalar y Correr el Proyecto
+## Instrucciones para instalar y correr el proyecto
 
 ### 1. Clonar el repositorio
 ```bash
@@ -50,7 +50,7 @@ npm run build
 
 ---
 
-## ⚙️ Configuración de Firebase y Variables de Entorno
+## Configuración de Firebase y Variables de Entorno
 
 El proyecto utiliza **Firebase** ([src/services/firebase.js](src/services/firebase.js)) en el **Plan Spark (gratuito)** para:
 1. **Firebase AI Logic (`firebase/ai`)**: La API key de Gemini **no se incluye en el código**, ya que es administrada directamente por el backend de Firebase (`GoogleAIBackend`).
@@ -69,13 +69,13 @@ VITE_FIREBASE_APP_ID=tu_app_id
 
 ---
 
-## 🌐 URL Pública de Firebase Hosting
+## URL Pública de firebase hosting
 
 - **URL de producción:** [https://tp2-pokeapp-sol.web.app](https://tp2-pokeapp-sol.web.app)
 
 ---
 
-## 🤖 Opción de Inteligencia Artificial Elegida
+## Opción de inteligencia artificial elegida
 
 - **Tecnología:** **Gemini con Firebase AI Logic** (`firebase/ai` — modelo `gemini-3.5-flash-lite` con `GoogleAIBackend`).
 - **Funcionamiento:** En la vista de catálogo ([src/views/RecomendadorView.vue](src/views/RecomendadorView.vue) y [src/services/recomendador.js](src/services/recomendador.js)), el usuario puede escribir un pedido en texto libre (por ejemplo: *"¿Qué Pokémon de tipo fuego o planta me recomendás de esta lista?"*). El asistente recibe como contexto únicamente los Pokémon que la aplicación ya cargó en pantalla y responde una recomendación breve en texto plano sin inventar elementos.
@@ -83,12 +83,12 @@ VITE_FIREBASE_APP_ID=tu_app_id
 
 ---
 
-## 📱🖥️ Capturas de Pantalla
+## Capturas de pantalla
 
-### Versión Móvil (375 px — Mobile First)
+### Versión móvil (375 px — Mobile First)
 ![Vista Móvil - Inicio](./public/captura-movil-inicio.png)
 ![Vista Móvil - Detalle](./public/captura-movil-detalle.png)
 
-### Versión de Escritorio
+### Versión de escritorio
 ![Vista Escritorio - Inicio](./public/captura-desktop-inicio.png)
 ![Vista Escritorio - Filtros y Favoritos](./public/captura-desktop-filtros.png)

@@ -71,7 +71,7 @@ VITE_FIREBASE_APP_ID=tu_app_id
 
 ## 🌐 URL Pública de Firebase Hosting
 
-- **URL de producción:** [https://dwn3ap-2026-2.web.app](https://dwn3ap-2026-2.web.app)
+- **URL de producción:** [https://tp2-pokeapp-sol.web.app](https://tp2-pokeapp-sol.web.app)
 
 ---
 
@@ -86,10 +86,9 @@ VITE_FIREBASE_APP_ID=tu_app_id
 ## 📱🖥️ Capturas de Pantalla
 
 ### Versión Móvil (375 px — Mobile First)
-> *(Reemplazar o agregar las capturas en la carpeta `public/` o `docs/`)*
-- `![Vista Móvil - Inicio](./public/captura-movil-inicio.png)`
-- `![Vista Móvil - Detalle](./public/captura-movil-detalle.png)`
+![Vista Móvil - Inicio](./public/captura-movil-inicio.png)
+![Vista Móvil - Detalle](./public/captura-movil-detalle.png)
 
 ### Versión de Escritorio
-- `![Vista Escritorio - Inicio](./public/captura-desktop-inicio.png)`
-- `![Vista Escritorio - Filtros y Favoritos](./public/captura-desktop-filtros.png)`
+![Vista Escritorio - Inicio](./public/captura-desktop-inicio.png)
+![Vista Escritorio - Filtros y Favoritos](./public/captura-desktop-filtros.png)

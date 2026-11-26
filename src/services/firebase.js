@@ -3,7 +3,7 @@ import { initializeApp } from "firebase/app";
 // Importamos las funciones de autenticación y los proveedores de Google y GitHub
 import { getAuth, GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
-// Objeto de configuración con las credenciales del proyecto de Firebase de la materia
+// Objeto de configuración con las credenciales del proyecto de Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyD8DDXtLPHTXa1D8YsmsX9QJJmTkwIdltE",
   authDomain: "dwn3ap-2026-2.firebaseapp.com",

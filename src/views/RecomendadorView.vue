@@ -36,7 +36,7 @@ const consultar = async (e) => {
   } catch (error) {
     console.log(error)
     const msg = String(error?.message || error || "").toLowerCase()
-    // Si se alcanza el límite de uso del plan gratuito Spark (código 429 / quota), mostramos un mensaje claro (Página 3 de la consigna)
+    // Si se alcanza el límite de uso del plan gratuito Spark (código 429 / quota), mostramos un mensaje claro
     if (msg.includes("429") || msg.includes("quota") || msg.includes("resource_exhausted") || msg.includes("high demand")) {
       esErrorCuota.value = true
       response.value = "⚠️ Se alcanzó el límite de cuota gratuita de Gemini AI (Plan Spark de Firebase). Por favor, esperá unos segundos antes de realizar otra consulta."

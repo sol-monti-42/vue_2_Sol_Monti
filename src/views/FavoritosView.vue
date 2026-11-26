@@ -1,7 +1,7 @@
 <script setup>
 // Importamos ref y onMounted para cargar y actualizar los favoritos desde localStorage
 import { ref, onMounted } from "vue"
-// Importamos el componente Table que incluye <TransitionGroup> para animar al quitar favoritos (Requisito 12)
+// Importamos el componente Table que incluye <TransitionGroup> para animar al quitar favoritos
 import Table from "../components/Table.vue"
 
 // Lista reactiva con los pokemones favoritos guardados en localStorage
@@ -21,7 +21,7 @@ onMounted(() => {
 
 <template>
   <main class="container py-4">
-    <!-- Encabezado de la vista /favoritos (Requisito 5 de la consigna) -->
+    <!-- Encabezado de la vista /favoritos -->
     <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-4">
       <div>
         <h1 class="h2 fw-bold mb-1">❤️ Mis Pokémon Favoritos</h1>

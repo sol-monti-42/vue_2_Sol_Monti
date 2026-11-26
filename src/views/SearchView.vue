@@ -1,7 +1,7 @@
 <script setup>
-// Importamos ref, computed, onMounted y watch (Requisito 11: computed, watch y ciclo de vida)
+// Importamos ref, computed, onMounted y watch de Vue
 import { ref, computed, onMounted, watch } from "vue"
-// Importamos useRoute y useRouter para leer y sincronizar los query params de la URL (Requisito 10)
+// Importamos useRoute y useRouter para leer y sincronizar los query params de la URL
 import { useRoute, useRouter } from "vue-router"
 // Importamos los componentes de Grilla de Tarjetas (Table) y Paginación
 import Table from "../components/Table.vue"
@@ -21,11 +21,11 @@ const next = ref("")
 const previous = ref("")
 // Página actual
 const currentPage = ref(1)
-// Estados reactivos de carga y error con opción de reintentar (Requisito 7)
+// Estados reactivos de carga y error con opción de reintentar
 const cargando = ref(false)
 const error = ref(null)
 
-// Lista de tipos/categorías de Pokémon disponibles para el selector de filtro (Requisito 4)
+// Lista de tipos/categorías de Pokémon disponibles para el selector de filtro
 const tiposDisponibles = [
   { valor: "", etiqueta: "Todos los tipos" },
   { valor: "fire", etiqueta: "Fuego (Fire)" },
@@ -54,7 +54,7 @@ const filtro = ref({
   max: 300
 })
 
-// Propiedad COMPUTED para filtrar los resultados cargados por nombre, tipo y altura (Requisito 11 de la consigna)
+// Propiedad computed para filtrar los resultados cargados por nombre, tipo y altura
 const personajesFiltrados = computed(() => {
   const texto = (filtro.value.nombre || "").trim().toLowerCase()
   const tipoSeleccionado = (filtro.value.tipo || "").trim().toLowerCase()
@@ -69,7 +69,7 @@ const personajesFiltrados = computed(() => {
   })
 })
 
-// Función para actualizar los query params en la URL y mantener la búsqueda y el filtro al recargar o compartir (Requisito 10)
+// Función para actualizar los query params en la URL y mantener la búsqueda y el filtro al recargar o compartir
 const sincronizarQueryUrl = (pagina = 1) => {
   const query = {}
   if (filtro.value.nombre) query.search = filtro.value.nombre
@@ -211,7 +211,7 @@ const buscar = () => {
           />
         </div>
 
-        <!-- Filtro por Tipo / Categoría (Requisito 4 de la consigna) -->
+        <!-- Filtro por Tipo / Categoría -->
         <div class="col-12 col-sm-6 col-lg-3">
           <label class="form-label small fw-semibold text-secondary">Tipo / Categoría</label>
           <select class="form-select rounded-pill px-3" v-model="filtro.tipo" @change="buscar">
@@ -247,13 +247,13 @@ const buscar = () => {
       </div>
     </div>
 
-    <!-- Estado de carga (Requisito 7) -->
+    <!-- Estado de carga -->
     <div v-if="cargando" class="text-center py-5 bg-white rounded-4 shadow-sm my-3">
       <div class="spinner-border text-danger mb-2" role="status"></div>
       <p class="text-secondary mb-0">Buscando Pokémon...</p>
     </div>
 
-    <!-- Estado de error con botón Reintentar (Requisito 7) -->
+    <!-- Estado de error con botón Reintentar -->
     <div v-else-if="error" class="alert alert-danger rounded-4 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 my-3">
       <span>{{ error }}</span>
       <button class="btn btn-danger btn-sm rounded-pill px-4 fw-semibold" @click="fetchApi({ current: currentPage })">

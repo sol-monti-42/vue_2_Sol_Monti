@@ -44,7 +44,7 @@ import Search from './Search.vue'
           <li class="nav-item">
             <RouterLink class="nav-link px-3 rounded-pill" active-class="active-poke-link" to="/search">Filtros</RouterLink>
           </li>
-          <!-- Enlace a la ruta /favoritos pedida en el punto 5 de la consigna -->
+          <!-- Enlace a la vista de Favoritos -->
           <li class="nav-item">
             <RouterLink class="nav-link px-3 rounded-pill" active-class="active-poke-link" to="/favoritos">Favoritos</RouterLink>
           </li>

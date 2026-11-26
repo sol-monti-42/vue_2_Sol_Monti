@@ -8,13 +8,13 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 // Variable reactiva con los datos principales del Pokémon
 const personaje = ref(null)
-// Variable reactiva con la descripción en español obtenida de pokemon-species (Requisito 3)
+// Variable reactiva con la descripción en español obtenida de pokemon-species
 const descripcion = ref("")
 // Variable reactiva con la categoría de especie (ej: "Pokémon Semilla")
 const categoria = ref("")
-// Estado reactivo booleano para saber si este Pokémon está en favoritos (Requisito 5)
+// Estado reactivo booleano para saber si este Pokémon está en favoritos
 const isFavorito = ref(false)
-// Estados reactivos de carga y error con opción de reintentar (Requisito 7)
+// Estados reactivos de carga y error con opción de reintentar
 const cargando = ref(false)
 const error = ref(null)
 
@@ -24,7 +24,7 @@ const verificarFavorito = (nombre) => {
   isFavorito.value = Boolean(usuario?.favoritos?.find((p) => p.name === nombre))
 }
 
-// Función para agregar o quitar este Pokémon de favoritos desde la pantalla de detalle (Requisito 5)
+// Función para agregar o quitar este Pokémon de favoritos desde la pantalla de detalle
 const toggleFavorito = () => {
   if (!personaje.value) return
   // Leemos el perfil de localStorage o inicializamos uno por defecto si no inició sesión
@@ -75,7 +75,7 @@ const cargarDetalle = async () => {
     personaje.value = data
     verificarFavorito(data.name)
 
-    // 2. Pedimos la especie del Pokémon para obtener su descripción oficial en español (Requisito 3)
+    // 2. Pedimos la especie del Pokémon para obtener su descripción oficial en español
     const speciesRes = await fetch("https://pokeapi.co/api/v2/pokemon-species/" + data.id)
     if (speciesRes.ok) {
       const speciesData = await speciesRes.json()
@@ -118,13 +118,13 @@ onMounted(() => {
       </RouterLink>
     </div>
 
-    <!-- Estado de carga (Requisito 7) -->
+    <!-- Estado de carga -->
     <div v-if="cargando" class="text-center py-5 bg-white rounded-5 shadow-sm my-3">
       <div class="spinner-border text-danger mb-2" role="status"></div>
       <p class="text-secondary mb-0">Cargando ficha del Pokémon...</p>
     </div>
 
-    <!-- Estado de error con botón Reintentar (Requisito 7) -->
+    <!-- Estado de error con botón Reintentar -->
     <div v-else-if="error" class="alert alert-danger rounded-4 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 my-3">
       <span>{{ error }}</span>
       <button class="btn btn-danger btn-sm rounded-pill px-4 fw-semibold" @click="cargarDetalle">
@@ -166,7 +166,7 @@ onMounted(() => {
             </span>
           </div>
 
-          <!-- Botón "Agregar a favoritos" en la página de detalles (Requisito 5 de la consigna) -->
+          <!-- Botón para agregar o quitar de favoritos desde la vista de detalle -->
           <button
             type="button"
             class="btn rounded-pill px-4 py-2 fw-bold shadow-sm"
@@ -180,7 +180,7 @@ onMounted(() => {
 
         <!-- Columna derecha: descripción, medidas, habilidades y barras de estadísticas base -->
         <div class="col-md-7 p-4 p-md-5 bg-white">
-          <!-- Descripción del Pokémon (Requisito 3 de la consigna) -->
+          <!-- Descripción del Pokémon -->
           <h2 class="h5 fw-bold text-uppercase text-secondary mb-2">Descripción</h2>
           <p class="text-dark bg-light p-3 rounded-4 mb-4">
             {{ descripcion || 'Cargando descripción de la Pokédex...' }}

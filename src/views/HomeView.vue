@@ -4,11 +4,11 @@ import { ref, onMounted } from "vue"
 // Importamos el componente Table que renderiza las tarjetas de los Pokémon
 import Table from "../components/Table.vue"
 
-// Lista reactiva de Pokémon destacados que se muestran en la portada (Requisito 1 de la consigna)
+// Lista reactiva de Pokémon destacados que se muestran en la portada
 const destacados = ref([])
-// Estado reactivo de carga para mostrar un spinner mientras responde la API (Requisito 7)
+// Estado reactivo de carga para mostrar un spinner mientras responde la API
 const cargando = ref(false)
-// Estado reactivo de error para mostrar mensaje y botón de reintentar si falla la red (Requisito 7)
+// Estado reactivo de error para mostrar mensaje y botón de reintentar si falla la red
 const error = ref(null)
 
 // Función asíncrona que obtiene con fetch una selección de 10 Pokémon populares para la página de inicio
@@ -89,7 +89,7 @@ onMounted(() => {
       </div>
     </section>
 
-    <!-- Sección de Pokémon Destacados en la página de inicio obtenida con fetch (Requisito 1) -->
+    <!-- Sección de Pokémon Destacados en la página de inicio obtenida con fetch -->
     <section class="mb-5">
       <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
         <div>
@@ -101,13 +101,13 @@ onMounted(() => {
         </RouterLink>
       </div>
 
-      <!-- Estado de carga (Requisito 7) -->
+      <!-- Estado de carga -->
       <div v-if="cargando" class="text-center py-5 bg-white rounded-4 shadow-sm my-3">
         <div class="spinner-border text-danger mb-2" role="status"></div>
         <p class="text-secondary mb-0">Cargando Pokémon destacados...</p>
       </div>
 
-      <!-- Estado de error con opción de reintentar (Requisito 7) -->
+      <!-- Estado de error con opción de reintentar -->
       <div v-else-if="error" class="alert alert-danger rounded-4 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 my-3">
         <span>{{ error }}</span>
         <button class="btn btn-danger btn-sm rounded-pill px-4 fw-semibold" @click="cargarDestacados">

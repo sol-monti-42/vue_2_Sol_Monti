@@ -20,7 +20,7 @@ const next = ref("")
 const previous = ref("")
 // Número de la página actual (arranca en 1)
 const currentPage = ref(1)
-// Estados reactivos de carga y de error con opción de reintentar (Requisito 7)
+// Estados reactivos de carga y de error con opción de reintentar
 const cargando = ref(false)
 const error = ref(null)
 
@@ -115,13 +115,13 @@ fetchApi({ uri: "https://pokeapi.co/api/v2/pokemon?limit=10&offset=0", current: 
     <!-- Recomendador con IA: recibe la lista de pokemones actuales como prop -->
     <RecomendadorView :personajes="personajes" />
 
-    <!-- Estado de carga (Requisito 7) -->
+    <!-- Estado de carga -->
     <div v-if="cargando" class="text-center py-5 bg-white rounded-4 shadow-sm my-3">
       <div class="spinner-border text-danger mb-2" role="status"></div>
       <p class="text-secondary mb-0">Cargando página {{ currentPage }} de la Pokédex...</p>
     </div>
 
-    <!-- Estado de error con botón Reintentar (Requisito 7) -->
+    <!-- Estado de error con botón Reintentar -->
     <div v-else-if="error" class="alert alert-danger rounded-4 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3 my-3">
       <span>{{ error }}</span>
       <button class="btn btn-danger btn-sm rounded-pill px-4 fw-semibold" @click="fetchApi({ current: currentPage })">

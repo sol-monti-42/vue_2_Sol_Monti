@@ -118,7 +118,7 @@ const agregarfavorito = (personaje) => {
           </div>
         </div>
 
-        <!-- Botón inferior que navega a la ruta propia /detalle/:id pedida en la consigna -->
+        <!-- Botón inferior que navega a la ruta de detalle /detalle/:id -->
         <RouterLink :to="'/detalle/' + id" class="btn btn-dark btn-sm rounded-pill mt-auto w-100 fw-semibold">
           Ver ficha →
         </RouterLink>

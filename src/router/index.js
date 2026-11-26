@@ -19,7 +19,7 @@ const router = createRouter({
       component: () => import("@/views/PersonajesView.vue")
     },
     {
-      // Ruta propia de detalle pedida en la consigna (/detalle/:id) con alias /personaje/:id y /pokemon/:id
+      // Ruta para ver el detalle de un Pokémon específico (/detalle/:id) con alias /personaje/:id y /pokemon/:id
       path: "/detalle/:id",
       alias: ["/personaje/:id", "/pokemon/:id"],
       component: () => import("@/views/DetalleView.vue")
@@ -30,7 +30,7 @@ const router = createRouter({
       component: () => import("@/views/SearchView.vue")
     },
     {
-      // Ruta de favoritos pedida en la consigna (/favoritos) donde se listan y se pueden quitar
+      // Ruta de favoritos (/favoritos) donde se listan los Pokémon guardados y se pueden quitar
       path: "/favoritos",
       component: () => import("@/views/FavoritosView.vue")
     },
@@ -50,7 +50,7 @@ const router = createRouter({
       component: () => import("@/views/RecomendadorView.vue")
     },
     {
-      // Ruta comodín ("no encontrado" / 404) que redirige automáticamente al inicio (Punto 10 de la consigna)
+      // Ruta comodín ("no encontrado" / 404) que redirige automáticamente al inicio
       path: "/:pathMatch(.*)*",
       redirect: "/"
     }
